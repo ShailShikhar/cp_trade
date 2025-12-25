@@ -1,0 +1,27 @@
+# ============================================
+# Risk Management & Stop Loss Orders
+# ============================================
+
+# STOP_LOSS_BASKET - Exit orders for existing positions
+- name: "STOP_LOSS_BASKET"
+  enabled: false
+  description: "Stop loss orders for existing positions"
+  tags: ["stoploss", "risk-management", "exit"]
+  orders:
+    - instrument: RELIANCE
+      transaction_type: Sell
+      order_type: StopLossMarket
+      product_type: Intraday
+      quantity: 1
+      price: 0.0
+      trigger_price: 2750.0
+      order_tag: "RELIANCE_SLM"
+      
+    - instrument: TCS
+      transaction_type: Sell
+      order_type: StopLossLimit
+      product_type: Intraday
+      quantity: 1
+      price: 3350.0
+      trigger_price: 3355.0
+      order_tag: "TCS_SLL"

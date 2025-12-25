@@ -1,0 +1,18 @@
+# Trading System Master Configuration
+# This file orchestrates loading of all modular config files
+
+# Individual orders configuration
+orders:
+  - orders/equity.yaml
+  - orders/derivatives.yaml
+  - orders/commodities.yaml
+
+# Basket order configurations
+basket_orders:
+  - basket_orders/hedging.yaml
+  - basket_orders/momentum.yaml
+  - basket_orders/diversified.yaml
+
+# Instrument definitions (keeping JSON for backward compatibility)
+instruments: instruments.py
+# instruments: instruments.py

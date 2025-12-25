@@ -1,0 +1,53 @@
+# ============================================
+# Multi-Asset Diversified Strategies
+# ============================================
+
+# MULTI_ASSET_DIVERSIFIED - Across equity, derivatives, commodities
+- name: "MULTI_ASSET_DIVERSIFIED"
+  enabled: false
+  description: "Diversified basket across equity, derivatives, and commodities"
+  tags: ["diversified", "multi-asset", "hedge"]
+  orders:
+    - instrument: RELIANCE
+      transaction_type: Buy
+      order_type: Market
+      product_type: Delivery
+      quantity: 1
+      price: 0.0
+      order_tag: "EQUITY_LONG"
+      
+    - instrument: NIFTY_DEC30_CE_26150  # Changed from 22200
+      transaction_type: Buy
+      order_type: Market
+      product_type: Delivery
+      quantity: 75
+      price: 0.0
+      order_tag: "OPTION_BULL"
+      
+    - instrument: GOLD
+      transaction_type: Buy
+      order_type: Limit
+      product_type: Normal
+      quantity: 1
+      price: 55000.0
+      order_tag: "GOLD_HEDGE"
+
+# CALENDAR_SPREAD_NIFTY - Multi-expiry strategy
+- name: "CALENDAR_SPREAD_NIFTY"
+  enabled: false
+  description: "Calendar spread: long Dec, short Jan"
+  tags: ["calendar-spread", "multi-expiry", "nifty"]
+  orders:
+    - instrument: NIFTY_DEC30_FUT
+      transaction_type: Buy
+      order_type: Market
+      product_type: Delivery
+      quantity: 50
+      order_tag: "DEC_LONG"
+      
+    - instrument: NIFTY_JAN06_FUT
+      transaction_type: Sell
+      order_type: Market
+      product_type: Delivery
+      quantity: 50
+      order_tag: "JAN_SHORT"

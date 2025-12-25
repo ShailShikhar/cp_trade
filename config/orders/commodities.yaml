@@ -1,0 +1,27 @@
+# ============================================
+# MCX Commodity Orders
+# ============================================
+
+# 12. GOLD Market Buy - Normal
+- name: "GOLD Market Buy"
+  instrument: GOLD
+  transaction_type: Buy
+  order_type: Market
+  product_type: Normal
+  quantity: 1
+  price: 0.0
+  order_tag: "GOLD_BUY"
+  enabled: false
+  tags: ["gold", "commodity", "hedge"]
+
+# 13. SILVER Limit Sell - Normal
+- name: "SILVER Limit Sell"
+  instrument: SILVER
+  transaction_type: Sell
+  order_type: Limit
+  product_type: Normal
+  quantity: 1
+  price: 72000.0
+  order_tag: "SILVER_SELL"
+  enabled: false
+  tags: ["silver", "commodity"]

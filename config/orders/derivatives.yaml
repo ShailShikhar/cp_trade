@@ -1,0 +1,76 @@
+# ============================================
+# F&O Derivatives Orders (Multi-Expiry)
+# ============================================
+
+# 6. NIFTY DEC30 Future Market Buy
+- name: "NIFTY DEC30 Future Buy"
+  instrument: NIFTY_DEC30_FUT
+  transaction_type: Buy
+  order_type: Market
+  product_type: Delivery
+  quantity: 50
+  price: 0.0
+  order_tag: "NIFTY_FUT_BUY"
+  enabled: false
+  tags: ["nifty", "future", "dec-expiry"]
+
+# 7. NIFTY DEC30 CE 26150 Market Buy
+- name: "NIFTY DEC30 CE 26150 Buy"
+  instrument: NIFTY_DEC30_CE_26150
+  transaction_type: Buy
+  order_type: Market
+  product_type: Delivery
+  quantity: 75
+  price: 0.0
+  order_tag: "NIFTY_CE_BUY"
+  enabled: false
+  tags: ["nifty", "call-option", "dec-expiry"]
+
+# 8. NIFTY DEC30 PE 26150 Limit Sell
+- name: "NIFTY DEC30 PE 26150 Sell"
+  instrument: NIFTY_DEC30_PE_26150
+  transaction_type: Sell
+  order_type: Limit
+  product_type: Delivery
+  quantity: 25
+  price: 45.0
+  order_tag: "NIFTY_PE_SELL"
+  enabled: false
+  tags: ["nifty", "put-option", "dec-expiry"]
+
+# 9. BANKNIFTY DEC30 Future SL-M Sell
+- name: "BANKNIFTY DEC30 Future SL-M Sell"
+  instrument: BANKNIFTY_DEC30_FUT
+  transaction_type: Sell
+  order_type: StopLossMarket
+  product_type: Intraday
+  quantity: 25
+  price: 0.0
+  trigger_price: 48500.0
+  order_tag: "BNF_SLM_SELL"
+  enabled: false
+  tags: ["banknifty", "future", "stoploss", "dec-expiry"]
+
+# 10. NIFTY JAN06 Future Buy (Calendar Spread)
+- name: "NIFTY JAN27 Future Buy"
+  instrument: NIFTY_JAN27_FUT
+  transaction_type: Buy
+  order_type: Market
+  product_type: Delivery
+  quantity: 65
+  price: 0.0
+  order_tag: "NIFTY_JAN_FUT"
+  enabled: false
+  tags: ["nifty", "future", "jan-expiry", "calendar-spread"]
+
+# 11. NIFTY JAN06 CE 22500 Buy (Multi-expiry strategy)
+- name: "NIFTY JAN06 CE 22500 Buy"
+  instrument: NIFTY_JAN06_CE_22500
+  transaction_type: Buy
+  order_type: Market
+  product_type: Delivery
+  quantity: 25
+  price: 0.0
+  order_tag: "NIFTY_JAN_CE"
+  enabled: false
+  tags: ["nifty", "call-option", "jan-expiry"]

@@ -1,0 +1,27 @@
+# ============================================
+# After Market Orders (AMO)
+# ============================================
+
+# AMO_BASKET - Next day entry orders
+- name: "AMO_BASKET"
+  enabled: false
+  description: "After market orders for next day execution"
+  tags: ["amo", "delivery", "overnight"]
+  orders:
+    - instrument: ICICIBANK
+      transaction_type: Buy
+      order_type: Limit
+      product_type: Delivery
+      quantity: 1
+      price: 1180.0
+      is_amo: false
+      order_tag: "ICICI_AMO"
+      
+    - instrument: INFY
+      transaction_type: Buy
+      order_type: Limit
+      product_type: Delivery
+      quantity: 1
+      price: 1600.0
+      is_amo: false
+      order_tag: "INFY_AMO"

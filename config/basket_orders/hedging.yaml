@@ -1,0 +1,48 @@
+# ============================================
+# Hedging & Protective Strategies
+# ============================================
+
+# FNO_HEDGING_STRATEGY - Protective Put
+- name: "FNO_HEDGING_STRATEGY"
+  enabled: false
+  description: "Protective put strategy: long future + long put"
+  tags: ["hedging", "protective-put", "nifty"]
+  orders:
+    - instrument: NIFTY_JAN27_FUT
+      transaction_type: Buy
+      order_type: Market
+      product_type: Delivery
+      quantity: 1
+      order_tag: "LONG_FUT"
+      
+    - instrument: NIFTY_JAN27_PE_26150
+      transaction_type: Buy
+      order_type: Limit
+      product_type: Delivery
+      quantity: 1
+      price: 35.0
+      order_tag: "PROTECTIVE_PUT"
+
+# COVER_ORDER_STRATEGY - Embedded Stop Loss
+- name: "COVER_ORDER_STRATEGY"
+  enabled: false
+  description: "Cover orders with embedded stop loss for risk control"
+  tags: ["cover-order", "stoploss", "momentum"]
+  orders:
+    - instrument: RELIANCE
+      transaction_type: Buy
+      order_type: Market
+      product_type: CoverOrder
+      quantity: 1
+      price: 0.0
+      trigger_price: 2800.0
+      order_tag: "RELIANCE_CO"
+      
+    - instrument: TCS
+      transaction_type: Sell
+      order_type: Limit
+      product_type: CoverOrder
+      quantity: 1
+      price: 3450.0
+      trigger_price: 3500.0
+      order_tag: "TCS_CO"

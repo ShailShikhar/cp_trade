@@ -1,0 +1,62 @@
+# ============================================
+# Intraday Momentum & Bracket Order Strategies
+# ============================================
+
+# EQUITY_INTRADAY_MOMENTUM Basket
+- name: "EQUITY_INTRADAY_MOMENTUM"
+  enabled: false
+  description: "Intraday momentum plays with market and limit orders"
+  tags: ["intraday", "momentum", "equity"]
+  orders:
+    - instrument: RELIANCE
+      transaction_type: Buy
+      order_type: Market
+      product_type: Intraday
+      quantity: 2
+      price: 0.0
+      order_tag: "RELIANCE_MKT"
+      
+    - instrument: TCS
+      transaction_type: Buy
+      order_type: Limit
+      product_type: Intraday
+      quantity: 1
+      price: 3250.0
+      order_tag: "TCS_LIMIT"
+      
+    - instrument: HDFCBANK
+      transaction_type: Buy
+      order_type: StopLossMarket
+      product_type: Intraday
+      quantity: 1
+      price: 0.0
+      trigger_price: 1500.0
+      order_tag: "HDFCBANK_SLM"
+
+# BRACKET_ORDER_EQUITY Basket
+- name: "BRACKET_ORDER_EQUITY"
+  enabled: false
+  description: "Bracket orders with predefined risk-reward on bank stocks"
+  tags: ["bracket-order", "intraday", "banks"]
+  orders:
+    - instrument: HDFCBANK
+      transaction_type: Buy
+      order_type: Limit
+      product_type: BracketOrder
+      quantity: 1
+      price: 1520.0
+      stop_loss: 20.0
+      square_off: 60.0
+      trailing_sl: 10
+      order_tag: "HDFCBANK_BO"
+      
+    - instrument: KOTAKBANK
+      transaction_type: Buy
+      order_type: Limit
+      product_type: BracketOrder
+      quantity: 1
+      price: 1790.0
+      stop_loss: 25.0
+      square_off: 70.0
+      trailing_sl: 15
+      order_tag: "KOTAKBANK_BO"

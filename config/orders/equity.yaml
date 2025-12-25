@@ -1,0 +1,66 @@
+# ============================================
+# NSE Equity Orders
+# ============================================
+
+# 1. RELIANCE Market Buy - Intraday
+- name: "RELIANCE Intraday Market Buy"
+  instrument: RELIANCE
+  transaction_type: Buy
+  order_type: Market
+  product_type: Intraday
+  quantity: 1
+  price: 0.0
+  order_tag: "MKT_INTRADAY_BUY"
+  enabled: false
+  tags: ["intraday", "momentum", "reliance"]
+
+# 2. TCS Limit Sell - Delivery
+- name: "TCS Delivery Limit Sell"
+  instrument: HINDCOPPER
+  transaction_type: Sell
+  order_type: Limit
+  product_type: Delivery
+  quantity: 1
+  price: 3500.0
+  order_tag: "LMT_DELIVERY_SELL"
+  enabled: false
+  tags: ["delivery", "hedge"]
+
+# 3. HDFCBANK StopLoss-Market Buy - Intraday
+- name: "HDFCBANK Intraday SL-M Buy"
+  instrument: HDFCBANK
+  transaction_type: Buy
+  order_type: StopLossMarket
+  product_type: Intraday
+  quantity: 1
+  price: 0.0
+  trigger_price: 1500.0
+  order_tag: "SLM_INTRADAY_BUY"
+  enabled: false
+  tags: ["intraday", "stoploss", "hdfcbank"]
+
+# 4. INFY StopLoss-Limit Sell - Delivery
+- name: "INFY Delivery SL-Limit Sell"
+  instrument: INFY
+  transaction_type: Sell
+  order_type: StopLossLimit
+  product_type: Delivery
+  quantity: 1
+  price: 1600.0
+  trigger_price: 1595.0
+  order_tag: "SLL_DELIVERY_SELL"
+  enabled: false
+  tags: ["delivery", "stoploss", "infy"]
+
+# 5. KOTAKBANK After Market Order (AMO)
+- name: "KOTAKBANK AMO Limit Buy"
+  instrument: KOTAKBANK
+  transaction_type: Buy
+  order_type: Limit
+  product_type: Delivery
+  quantity: 1
+  price: 1800.0
+  is_amo: false
+  order_tag: "AMO_BUY"
+  enabled: false
+  tags: ["amo", "delivery", "kotak"]
