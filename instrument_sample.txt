@@ -1,0 +1,14 @@
+MCX.csv
+Exch	Exchange Segment	Symbol	Token	Instrument Type	Option Type	Strike Price	Instrument Name	Trading Symbol	Formatted Ins Name	Expiry Date	Lot Size	Tick Size	freeze_qty	Board Lot Qty
+MCX	mcx_fo	GOLD	449535	OPTFUT	CE	88600	GOLD	GOLD27JAN26C88600	GOLD 27th JAN26 88600 CE	2026-01-27	1	0.5	0	1
+MCX	mcx_fo	GOLD	449536	OPTFUT	PE	88600	GOLD	GOLD27JAN26P88600	GOLD 27th JAN26 88600 PE	2026-01-27	1	0.5	0	1
+
+NFO.csv
+Exch	Exchange Segment	Symbol	Token	Instrument Type	Option Type	Strike Price	Instrument Name	Formatted Ins Name	Trading Symbol	Expiry Date	Lot Size	Tick Size
+NFO	nse_fo	NIFTY	35221	OPTIDX	CE	30000	NIFTY	NIFTY DEC 30000 CE	NIFTY30DEC25C30000	2025-12-30	75	0.05
+NFO	nse_fo	BANKNIFTY	49224	FUTIDX	XX	-1	BANKNIFTY	BANKNIFTY JAN26 FUT	BANKNIFTY27JAN26F	2026-01-27	30	0.2
+
+NSE.csv
+Exch	Exchange Segment	Group Name	Symbol	Token	Instrument Type	Instrument Name	Formatted Ins Name	Trading Symbol	Lot Size	Tick Size
+NSE	nse_cm	EQ	TCS	11536	0	TATA CONSULTANCY SERV LT	TCS-EQ	TCS-EQ	1	0.1
+NSE	nse_cm	EQ	RELIANCE	2885	0	RELIANCE INDUSTRIES LTD	RELIANCE-EQ	RELIANCE-EQ	1	0.1
