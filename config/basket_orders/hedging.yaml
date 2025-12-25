@@ -4,7 +4,7 @@
 
 # FNO_HEDGING_STRATEGY - Protective Put
 - name: "FNO_HEDGING_STRATEGY"
-  enabled: false
+  enabled: true
   description: "Protective put strategy: long future + long put"
   tags: ["hedging", "protective-put", "nifty"]
   orders:
